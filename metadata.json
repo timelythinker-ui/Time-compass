@@ -1,0 +1,8 @@
+{
+  "name": "Remix Timely Compass",
+  "description": "AI-powered career and direction exploration through adaptable, welcoming conversation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

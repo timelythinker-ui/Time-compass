@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg: #F6F8FC;
+    --bg-secondary: #EDF2F9;
+    --surface: #FFFFFF;
+    --surface-hover: #F8FAFC;
+    --border: #E2E8F0;
+    --border-subtle: #EDF2F7;
+    --text-primary: #101828;
+    --text-secondary: #475467;
+    --text-muted: #64748B;
+    --accent-blue: #3478F6;
+    --accent-blue-hover: #2563EB;
+    --accent-teal: #20B8A6;
+    --accent-teal-soft: rgba(32, 184, 166, 0.12);
+    --accent-blue-soft: rgba(52, 120, 246, 0.10);
+    --compass-outer: #1E293B;
+    --compass-inner: #0F172A;
+    --compass-metal: #CBD5E1;
+  }
+
+  .dark {
+    --bg: #080D18;
+    --bg-secondary: #101827;
+    --surface: #162235;
+    --surface-hover: #1C2B42;
+    --border: #1E2D44;
+    --border-subtle: #152234;
+    --text-primary: #F4F7FB;
+    --text-secondary: #AAB6C8;
+    --text-muted: #7E8FA6;
+    --accent-blue: #4C8DFF;
+    --accent-blue-hover: #60A5FA;
+    --accent-teal: #25C7B3;
+    --accent-teal-soft: rgba(37, 199, 179, 0.15);
+    --accent-blue-soft: rgba(76, 141, 255, 0.15);
+    --compass-outer: #162235;
+    --compass-inner: #0B1220;
+    --compass-metal: #64748B;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F6F8FC;
+    color: #101828;
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    background-color: #080D18;
+    color: #F4F7FB;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Subtle transitions for theme switching and interactive elements */
+body {
+  background-color: #F6F8FC;
+  color: #101828;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+}
+
+html.dark body {
+  background-color: #080D18;
+  color: #F4F7FB;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
